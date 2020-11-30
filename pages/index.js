@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
-export default function Home() {
+export default function Home({ launches }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -62,4 +62,12 @@ export default function Home() {
       </footer>
     </div>
   )
+}
+
+export async function getStaticProps() {
+  return {
+    props: {
+      launches: []
+    }
+  }
 }
